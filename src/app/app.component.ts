@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SumCalculator } from './controllers/sumCalculator'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Bem vindo ao contador de letras do intervalo entre 1 e 1000 ';
+
+  public totalSum: number;
+  constructor() { }
+
+  ngOnInit() {
+    this.totalSum = new SumCalculator().totalSum;
+  }
+
 }
