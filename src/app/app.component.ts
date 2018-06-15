@@ -9,11 +9,22 @@ import { SumCalculator } from './controllers/sumCalculator'
 export class AppComponent {
   title = 'Bem vindo ao contador de letras do intervalo entre 1 e 1000 ';
 
-  public totalSum: number;
-  constructor() { }
+  public answer;
+  private sumCalculator: SumCalculator;
+
+  constructor() {
+    this.sumCalculator = new SumCalculator();
+   }
 
   ngOnInit() {
-    this.totalSum = new SumCalculator().totalSum;
+  }
+
+  showAnswer() {
+    this.answer = this.sumCalculator.totalSum;
+  }
+
+  hideAnswer() {
+    this.answer = '';
   }
 
 }

@@ -3,7 +3,7 @@
         <h1>{{title}}</h1>
     </div>
     <div class="col-sm-12 text-justify">
-        <h2> A soma das letras presentes no intervalo entre 1 e 1000 é {{totalSum}}</h2>
+        <h2> Soma das letras presentes no intervalo entre 1 e 1000 </h2>
 
         <p> Um intervalo é delimitado por dois números, por exempo 1 e 5. Por exemplo, escrevendo os números de 1 a 5 como palavras,
             temos: um, dois, três, quatro e cinco. Como 1 possui 2 letras, dois possui 4 letras, três possui 4 letras, quatro
@@ -12,6 +12,12 @@
         <p>Link do problema:
             <a href="http://dojopuzzles.com/problemas/exibe/contando-as-letras-dos-numeros/">Contando as letras dos números</a>
         </p>
-
+    </div>
+    <div class="col-sm-12 text-center" *ngIf="!answer">
+        <button type="button" class="btn btn-primary btn-lg" (click)="showAnswer()">Ver Resposta</button>
+    </div>
+    <div class="col-sm-12 text-center" *ngIf="answer">
+        <h3>{{answer}}</h3>
+        <button type="button" class="btn btn-primary btn-lg" (click)="hideAnswer()">Esconder Resposta</button>
     </div>
 </div>
